@@ -143,7 +143,6 @@ class GenerateLevel():
             str_countingHours = str(self.int_counter//(60*60) % 24).split(".")
             text = "%s:%s:%s" % (str_countingHours[0].zfill(2), str_countingMinutes[0].zfill(2), str_countingSeconds[0].zfill(2))
             self.game.draw_text("Time Taken: "+text, 20, self.game.DISPLAY_W/2 + 150, self.game.DISPLAY_H/2+355, self.game.BLACK)
-        self.game.window.blit(self.game.display, (0,0))
 
     def fillvalue(self, int_value):
         text1 = self.font.render(str(int_value), 1, (0, 0, 0))
@@ -196,10 +195,10 @@ class GenerateLevel():
                 int_z = j
                 self.drawlines(defaultgrid, False)
                 ##
-                # pygame.draw.rect(self.game.display, ((0, 182, 0)),
-                #                  pygame.Rect(450, 700, 100, 50))
-                # pygame.draw.rect(self.game.display, ((0, 182, 0)),
-                #                  pygame.Rect(50, 700, 350, 50))
+                pygame.draw.rect(self.game.display, ((0, 182, 0)),
+                                 pygame.Rect(450, 700, 100, 50))
+                pygame.draw.rect(self.game.display, ((0, 182, 0)),
+                                 pygame.Rect(50, 700, 350, 50))
                 pygame.time.set_timer(pygame.K_RETURN, 1000)
                 #global int_counter
                 self.int_counter += 1/10
@@ -214,10 +213,10 @@ class GenerateLevel():
                     self.int_counter//(60*60) % 24).split(".")
                 text = "%s:%s:%s" % (
                     str_countingHours[0].zfill(2), str_countingMinutes[0].zfill(2), str_countingSeconds[0].zfill(2))
-                # self.game.display.blit(self.font.render(
-                #     text, True, (0, 0, 0)), (450, 700))
-                # self.game.display.blit(self.font.render(
-                #     str_display_counter, True, (0, 0, 0)), (50, 700))
+                self.game.display.blit(self.font.render(
+                    text, True, (0, 0, 0)), (450, 700))
+                self.game.display.blit(self.font.render(
+                    str_display_counter, True, (0, 0, 0)), (50, 700))
                 self.clock.tick(10)
                 ##
                 for event in pygame.event.get():

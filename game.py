@@ -38,13 +38,13 @@ class Game():
             elif self.S_KEY:
                 self.generatelevel.solvegame(self.defaultgrid,0,0)
                 self.completeFlag = True
-            self.display.fill(self.BLACK)
+            #self.display.fill(self.BLACK)
             self.display.fill(self.WHITE)
             if self.completeFlag == True:
                 self.generatelevel.drawlines(self.defaultgrid, True)
             elif self.completeFlag == False:
                 self.generatelevel.drawlines(self.defaultgrid, False)
-            self.window.blit(self.display, (0,0))
+                self.window.blit(self.display, (0,0))
             pygame.display.update()
             self.reset_keys()
     
