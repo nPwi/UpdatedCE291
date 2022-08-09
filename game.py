@@ -47,6 +47,7 @@ class Game():
                 self.window.blit(self.display, (0,0))
             pygame.display.update()
             self.reset_keys()
+        self.analysis = AnalysisMenu(self)
     
     # Function to check for possible inputs by user
     def check_events(self):

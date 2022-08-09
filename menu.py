@@ -232,7 +232,7 @@ class AnalysisMenu(Menu):
             #Total Moves
             self.game.draw_text("Total Moves: "+str(self.NumberofTotalMoves), 20, self.mid_w, self.mid_h +275 , self.game.WHITE)
             #Average Moves / Per
-            self.game.draw_text("Average Moves Per Game: "+str(self.NumberofTotalMoves/self.NumberofGamesSolved), 20, self.mid_w, self.mid_h +300 , self.game.WHITE)
+            self.game.draw_text("Average Moves Per Game: "+str(round(self.NumberofTotalMoves/self.NumberofGamesSolved,2)), 20, self.mid_w, self.mid_h +300 , self.game.WHITE)
             self.blit_screen()
 
     def check_input(self):
